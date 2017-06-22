@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+//添加 greendao
+apply plugin: 'org.greenrobot.greendao'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.0"
@@ -27,4 +30,18 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+    //添加 greendao 依赖
+    compile 'org.greenrobot:greendao:3.2.2'
+    compile'com.squareup.okhttp3:okhttp:3.4.1'
+    compile'com.google.code.gson:gson:2.7'
+    compile'com.github.bumptech.glide:glide:3.7.0'
+}
+
+//schemaVersion 对应当前数据库版本
+//daoPackage 由GreenDao自动生成代码所在的包名，默认的是在项目包下面新建一个gen。
+//targetGenDir 设置自动生成代码的目录。
+greendao{
+    schemaVersion 1
+    daoPackage 'com.study.wsh.fanshaoweather.database'
+    targetGenDir 'src/main/java'
 }
