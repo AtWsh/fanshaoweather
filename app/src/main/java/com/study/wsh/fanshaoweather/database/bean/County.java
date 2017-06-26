@@ -2,6 +2,7 @@ package com.study.wsh.fanshaoweather.database.bean;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Keep;
 import org.greenrobot.greendao.annotation.Property;
 import org.greenrobot.greendao.annotation.Unique;
 import org.greenrobot.greendao.annotation.Generated;
@@ -21,13 +22,13 @@ public class County {
     private String countyName;
 
     @Property
-    private int weatherId;
+    private String weatherId;
 
     @Property
     private int cityId;
 
-    @Generated(hash = 451909194)
-    public County(Long id, String countyName, int weatherId, int cityId) {
+    @Generated(hash = 451909194) @Keep
+    public County(Long id, String countyName, String weatherId, int cityId) {
         this.id = id;
         this.countyName = countyName;
         this.weatherId = weatherId;
@@ -54,11 +55,11 @@ public class County {
         this.countyName = countyName;
     }
 
-    public int getWeatherId() {
+    public String getWeatherId() {
         return this.weatherId;
     }
 
-    public void setWeatherId(int weatherId) {
+    public void setWeatherId(String weatherId) {
         this.weatherId = weatherId;
     }
 
